@@ -50,6 +50,6 @@ Called by user_run_file.py to run a set of operating points given specified para
 *   Calculate the deskewing that should be applied to two of the channels (the top and bottom switch nodes in this case) for the given voltage waveform excitation. This is done by aligning one of the switch node waveforms to the middle node of the ST circuit graphically (eg minimization of mean square error or some other method) and then sweeping the skew of the other switch node until the calculated Ediss is very close to zero (as would be expected for a high-Q capacitor). Then in theory you use the same deskewing values when the DUT is installed and get an accurate Ediss calculation. We do the deskewing calculation for every operating point since deskewing can depend on things like voltage, frequency, waveform, and so on.
 *   Calculate Ediss, store run parameters in a text file, and save scope waveforms to the appropriate folder in run_documentation_files.
     
-## user_input_and_run_files
+## hardware_setup_generation
 
-*   Contains files that the user can edit to adjust the state of the converter
+*   Guides user through the process of setting up hardware
