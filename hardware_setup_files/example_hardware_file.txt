@@ -1,0 +1,8 @@
+Title: example_hardware_file
+probe1_attenuation: 20
+probe2_attenuation: 20
+probe3_attenuation: 10
+probe4_attenuation: 20
+probe1_cdiv: 0.15378222222222224
+probe2_cdiv: 0.1570905555555556
+probe4_cdiv: 0.08636143639291466

@@ -1,0 +1,28 @@
+Libraries needed in general:
+- pyvisa
+    - note that pyvisa.ResourceManager() won't work if installed alone
+        - ValueError: Could not locate a VISA implementation. Install either the NI binary or pyvisa-py.
+        - I tried installing the pyvisa-py package, but still got the same error
+        - The solution was to download Ultra Sigma from Rigol, which apparently includes the NI binary (IVI something or other)
+- time
+- serial
+
+Convention used in the Classes for different equipment types:
+- self.rm = pyvisa.ResourceManager(). Eg something to facilitate interation with VISA
+- self.inst = instance of the object. Eg the object that rm.open_resource(addr) returns
+- self.connected = Boolean for whether the equipment is connected
+- self.devID = inst.query("*IDN?"). The device ID I think
+- self.fault = not sure yet, but probably just a heads up something is wrong
+
+
+
+Rigol MSO5000 misc notes:
+- programming guide:
+    - https://int.rigol.com/Images/MSO5000ProgrammingGuideEN_tcm7-4051.pdf
+- Removing the USB and then sticking it back in might cause problems (eg "unknown system miscellaneous error")
+    - Try clearing environment variables. Then try restarting Spyder
+
+come back to for help on exporting data from keysight scopes:
+- https://community.keysight.com/s/question/0D52L00005Idz79SAB/n9320b-remote-data-collection-help
+- https://community.element14.com/technologies/test-and-measurement/f/forum/53751/how-to-transfer-data-from-a-keysight-spectrum-analyser-n9020b-to-my-local-control-pc
+
